@@ -1,13 +1,30 @@
 ﻿<template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
+      <el-row type="flex" class="row-bg">
+          <el-col :span="6">
+            <div class="grid-content bg-purple"></div>
+          </el-col >
+          <el-col :span="6">
+            <div class="grid-content bg-purple bg-purple-light"></div>
+          </el-col>
+          <el-col :span="6">
+            <div class="grid-content bg-purple"></div>
+          </el-col >
+      </el-row>
+      <el-row :gutter="20">
+          <el-col :span="6" :offset="6">
+            <div class="grid-content bg-purple"></div>
+          </el-col>
+          <el-col :span="6" :offset="6">
+            <div class="grid-content bg-purple"></div>
+          </el-col>
+      </el-row>
+      <el-row :gutter="20">
+          <el-col :span="12" :offset="6">
+            <div class="grid-content bg-purple"></div>
+          </el-col>
 
-    <p>
-       <router-link to="/foo">Go to Foo</router-link>
-       <router-link to="/bar">Go to Bar</router-link>
-    </p>
-    <router-view></router-view>
+      </el-row>
 <!--     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -21,24 +38,20 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul> -->
-    <MessageBox></MessageBox>
-    <ActionSheet></ActionSheet>
-    <element></element>
   </div>
 </template>
 
 <script>
-import MessageBox from './component/MessageBox.vue'
-import ActionSheet from './component/Actionsheet.vue'
-import element from './component/eleui.vue'
+
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Hello Vue!'
+      msg: 'Hello Vue!',
+      visible:false
     }
   },
-  components: { MessageBox ,ActionSheet, element }
+  components: {  }
 }
 </script>
 
@@ -69,4 +82,30 @@ li {
 a {
   color: #42b983;
 }
+.el-row {
+   margin-bottom: 20px;
+   &:last-child {
+     margin-bottom: 0;
+   }
+ }
+ .el-col {
+   border-radius: 4px;
+ }
+ .bg-purple-dark {
+   background: #99a9bf;
+ }
+ .bg-purple {
+   background: #d3dce6;
+ }
+ .bg-purple-light {
+   background: #e5e9f2;
+ }
+ .grid-content {
+   border-radius: 4px;
+   min-height: 36px;
+ }
+ .row-bg {
+   padding: 10px 0;
+   background-color: #f9fafc;
+ }
 </style>

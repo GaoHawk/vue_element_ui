@@ -3,8 +3,9 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import MintUI from 'mint-ui'
-import Foo from './component/foo.vue'
+import ElementUI from 'element-ui'
 
+Vue.use(ElementUI)
 Vue.use(MintUI)
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -19,7 +20,7 @@ const Bar = { template: '<div>bar</div>' }
 const Baz = { template: '<div>baz</div>' }
 
 const routes = [
-  { path: '/foo', component: Foo },
+  { path: '/baz', component: Baz },
   { path: '/bar', component: Bar }
 ]
 
